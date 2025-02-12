@@ -1,0 +1,6 @@
+services:
+  distance:
+    build: .
+    container_name: distance
+    ports:
+      - "8083:8080"  # Port d'écoute du service
