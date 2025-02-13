@@ -49,6 +49,8 @@ public class DistanceIntegrationTest {
         DistanceRequestDTO invalidRequestDTO = new DistanceRequestDTO();
         invalidRequestDTO.setLatitudeFrom(41.9028);
         invalidRequestDTO.setLongitudeFrom(2.3522);
+        invalidRequestDTO.setLatitudeTo(0.0);
+        invalidRequestDTO.setLongitudeTo(0.0);
 
         mockMvc.perform(post("/api/distance")
                         .contentType(MediaType.APPLICATION_JSON)

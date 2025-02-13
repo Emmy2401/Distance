@@ -20,7 +20,6 @@ public class DistanceController {
      */
     @PostMapping
     public Double getDistance(@RequestBody DistanceRequestDTO request) {
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA LatFRom " + request.getLatitudeFrom());
         return osrmClientService.getDistance(
                 request.getLatitudeFrom(),
                 request.getLongitudeFrom(),
