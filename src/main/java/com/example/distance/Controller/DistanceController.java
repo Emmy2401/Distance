@@ -18,7 +18,7 @@ public class DistanceController {
      * @param request DTO contenant les coordonnées des deux points.
      * @return La distance en mètres entre les deux points.
      */
-    @PostMapping()
+    @PostMapping("/distance")
     public double getDistance(@RequestBody @Valid DistanceRequestDTO request) {
         return osrmClientService.getDistance(
                 request.getLatitudeFrom(),
