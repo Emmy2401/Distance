@@ -18,13 +18,15 @@ public class DistanceController {
      * @param request DTO contenant les coordonnées des deux points.
      * @return La distance en mètres entre les deux points.
      */
-    @PostMapping("/distance")
-    public double getDistance(@RequestBody @Valid DistanceRequestDTO request) {
+    @PostMapping
+    public Double getDistance(@RequestBody DistanceRequestDTO request) {
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA LatFRom " + request.getLatitudeFrom());
         return osrmClientService.getDistance(
                 request.getLatitudeFrom(),
                 request.getLongitudeFrom(),
                 request.getLatitudeTo(),
                 request.getLongitudeTo()
+
         );
     }
 }

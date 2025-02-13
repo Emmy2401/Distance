@@ -13,7 +13,7 @@ public class DistanceOSRMUnitTest {
         OSRMClientService osrmClientService = new OSRMClientService();
         // Paris (48.8566, 2.3522)
         // Rome  (41.9028, 12.4964)
-        double distance = osrmClientService.getDistance(
+        Double distance = osrmClientService.getDistance(
                 48.8566, 2.3522,
                 41.9028, 12.4964
         );
@@ -31,7 +31,7 @@ public class DistanceOSRMUnitTest {
         OSRMClientService osrmClientService = new OSRMClientService();
 
         // Latitude invalide (-9999 est en dehors des limites géographiques)
-        double invalidLatitude = -9999.0;
+        Double invalidLatitude = -9999.0;
 
         // Vérifie qu'une exception est levée
         Assertions.assertThrows(Exception.class, () -> {
