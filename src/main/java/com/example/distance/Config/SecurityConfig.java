@@ -14,7 +14,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) //
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/distance/**").permitAll() // Autorise toutes les routes sous /api/distance/
+                        .requestMatchers("/api/distance/**","/actuator/**","/v3/**","/api-docs.yaml","/error").permitAll() // Autorise toutes les routes sous /api/distance/
                         .anyRequest().permitAll()
                 );
 
