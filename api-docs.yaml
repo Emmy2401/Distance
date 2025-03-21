@@ -1,0 +1,55 @@
+openapi: 3.1.0
+info:
+  title: MedHeadPoc Distance
+  description: API for POC
+  version: 1.0.0
+servers:
+- url: http://localhost:8081
+  description: Local server
+- url: https://api.distance.example.com
+  description: Production server
+paths:
+  /api/distance:
+    post:
+      tags:
+      - distance-controller
+      summary: getDistance
+      description: permet de faire des calcul de distance entre 2 coord geographique
+        la1long1 et lat1long2
+      operationId: getDistance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DistanceRequestDTO"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: number
+                format: double
+components:
+  schemas:
+    DistanceRequestDTO:
+      type: object
+      properties:
+        latitudeFrom:
+          type: number
+          format: double
+        longitudeFrom:
+          type: number
+          format: double
+        latitudeTo:
+          type: number
+          format: double
+        longitudeTo:
+          type: number
+          format: double
+      required:
+      - latitudeFrom
+      - latitudeTo
+      - longitudeFrom
+      - longitudeTo
